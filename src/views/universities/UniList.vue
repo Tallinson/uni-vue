@@ -1,12 +1,17 @@
 <template>
     <h1>Welcome to the list of Univeristies in Nigeria</h1>
-    <div v-for="uni in uniList" :key="uni.abbreviation" class="uni">
-        <router-link :to="{ name: 'UniListDetails', params: { abbreviation: uni.abbreviation }}">
-            <h2>{{ uni.name }}</h2>
-        </router-link>
+    <div v-if="uniList.length">
+        <div v-for="uni in uniList" :key="uni.abbreviation" class="uni">
+            <router-link :to="{ name: 'UniListDetails', params:{ abbreviation: uni.abbreviation }}">
+                <h2>{{ uni.name }}</h2>
+            </router-link>
+        </div>
+    </div>
+    <div v-else>
+        <p>Loading data...</p>
     </div>
 </template>
-
+ 
 <script>
 export default {
     name: 'UniList',
