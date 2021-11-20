@@ -19,7 +19,7 @@ export default {
     };
   },
   mounted() {
-    fetch("http://localhost:8000/api/" + this.abbreviation)
+    fetch("https://nigeria-uni.herokuapp.com/api/v1/" + this.abbreviation)
       .then((res) => res.json())
       .then((data) => (this.uni = data))
       .catch((err) => console.log(err.message));

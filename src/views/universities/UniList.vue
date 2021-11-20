@@ -21,7 +21,7 @@ export default {
         }
     },
     mounted() {
-        fetch('http://localhost:8000/api')
+        fetch('https://nigeria-uni.herokuapp.com/api/v1')
             .then(res => res.json())
             .then(data => this.uniList = data)
             .catch(err => console.log(err.message))
